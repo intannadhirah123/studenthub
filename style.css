@@ -1,0 +1,203 @@
+/* ==========================================================
+   StudentHub - Main Stylesheet
+   Course: CDIM262
+   Theme: Purple and White
+   Note: Bootstrap 5.3.3 handles layout. This file only adds
+         our colours and extra styling on top of it.
+   ========================================================== */
+
+
+/* ---------- 1. THEME COLOURS (CSS variables) ---------- */
+:root {
+    --purple-900: #2e1065;
+    --purple-700: #5b21b6;
+    --purple-600: #7c3aed;
+    --purple-500: #8b5cf6;
+    --purple-100: #ede9fe;
+    --purple-50:  #f5f3ff;
+    --text-dark:  #1f2937;
+    --text-muted: #6b7280;
+
+    /* Tell Bootstrap that "primary" now means purple */
+    --bs-primary: #7c3aed;
+    --bs-primary-rgb: 124, 58, 237;
+    --bs-link-color: #7c3aed;
+    --bs-link-hover-color: #5b21b6;
+}
+
+
+/* ---------- 2. GENERAL PAGE STYLE ---------- */
+body {
+    background-color: var(--purple-50);
+    color: var(--text-dark);
+}
+
+
+/* ---------- 3. BOOTSTRAP BUTTON OVERRIDES ---------- */
+.btn-primary {
+    --bs-btn-bg: #7c3aed;
+    --bs-btn-border-color: #7c3aed;
+    --bs-btn-hover-bg: #5b21b6;
+    --bs-btn-hover-border-color: #5b21b6;
+    --bs-btn-active-bg: #5b21b6;
+    --bs-btn-active-border-color: #5b21b6;
+    --bs-btn-disabled-bg: #7c3aed;
+    --bs-btn-disabled-border-color: #7c3aed;
+    --bs-btn-focus-shadow-rgb: 124, 58, 237;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: #7c3aed;
+    --bs-btn-border-color: #7c3aed;
+    --bs-btn-hover-bg: #7c3aed;
+    --bs-btn-hover-border-color: #7c3aed;
+    --bs-btn-active-bg: #7c3aed;
+    --bs-btn-active-border-color: #7c3aed;
+    --bs-btn-focus-shadow-rgb: 124, 58, 237;
+}
+
+
+/* ---------- 4. FORM STYLE ---------- */
+/* Purple glow when a user clicks inside an input box */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--purple-500);
+    box-shadow: 0 0 0 0.25rem rgba(124, 58, 237, 0.2);
+}
+
+
+/* ---------- 5. LOGIN AND REGISTER PAGES ---------- */
+/* Full-screen purple background with the card in the centre */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--purple-900), var(--purple-600));
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Round purple logo badge shown above the form title */
+.brand-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--purple-100);
+    color: var(--purple-600);
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+
+/* ---------- 6. NAVIGATION BAR ---------- */
+.navbar-studenthub {
+    background: linear-gradient(90deg, var(--purple-900), var(--purple-600));
+}
+
+.navbar-studenthub .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-studenthub .nav-link:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* The page you are currently on is highlighted in white */
+.navbar-studenthub .nav-link.active {
+    color: var(--purple-700);
+    background-color: #ffffff;
+    font-weight: 600;
+}
+
+
+/* ---------- 7. PAGE HEADER ---------- */
+.page-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--purple-900);
+}
+
+
+/* ---------- 8. CARDS AND STATISTICS ---------- */
+.card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 10px rgba(91, 33, 182, 0.08);
+}
+
+/* Small lift effect when the mouse hovers over a statistics card */
+.stat-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(91, 33, 182, 0.18);
+}
+
+.stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 0.75rem;
+    background-color: var(--purple-100);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-number {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--purple-700);
+    line-height: 1.1;
+}
+
+/* Keeps the Chart.js chart a fixed, tidy height */
+.chart-container {
+    position: relative;
+    height: 320px;
+}
+
+
+/* ---------- 9. TABLES ---------- */
+.table-custom thead th {
+    background-color: var(--purple-100);
+    color: var(--purple-900);
+    border-bottom: 2px solid var(--purple-500);
+    white-space: nowrap;
+}
+
+.table-custom tbody tr:hover {
+    background-color: var(--purple-50);
+}
+
+
+/* ---------- 10. BADGES ---------- */
+.badge-purple {
+    background-color: var(--purple-100);
+    color: var(--purple-700);
+}
+
+
+/* ---------- 11. FOOTER ---------- */
+.site-footer {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 1.5rem 0;
+}

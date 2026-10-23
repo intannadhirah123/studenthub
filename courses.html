@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Page information (content management: title and metadata) -->
+    <title>Courses | StudentHub - Student Management System</title>
+    <meta name="description" content="List of all courses at StudentHub with enrolment and search.">
+    <meta name="author" content="Your Name">
+
+    <!-- Bootstrap 5.3.3 CSS (official CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Our own CSS (must come after Bootstrap) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="courses">
+
+    <!-- ===== NAVIGATION BAR (same as the other pages) ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-studenthub">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="dashboard.html">🎓 StudentHub</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainMenu" aria-controls="mainMenu"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" data-nav="dashboard" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" data-nav="students" href="students.html">Students</a></li>
+                    <li class="nav-item"><a class="nav-link" data-nav="courses" href="courses.html">Courses</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-3">
+                    <span class="text-white small">👤 <span id="welcomeUser">User</span></span>
+                    <button type="button" id="logoutBtn" class="btn btn-light btn-sm">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="container py-4">
+
+        <!-- Page header -->
+        <header class="page-header mb-4">
+            <h1>Courses</h1>
+            <p class="text-muted mb-0">Browse courses, lecturers and how full each class is.</p>
+        </header>
+
+        <!-- Table card -->
+        <section aria-labelledby="courseListHeading">
+            <div class="card">
+                <div class="card-body">
+
+                    <!-- Heading and search box -->
+                    <div class="row g-3 align-items-center mb-3">
+                        <div class="col-12 col-md-6">
+                            <h2 id="courseListHeading" class="h5 mb-0">Course List</h2>
+                            <small class="text-muted" id="resultCount" aria-live="polite"></small>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="searchInput" class="visually-hidden">Search courses</label>
+                            <input type="search" id="searchInput" class="form-control"
+                                   placeholder="Search by code, name or lecturer...">
+                        </div>
+                    </div>
+
+                    <!-- table-responsive adds a sideways scroll on small screens -->
+                    <div class="table-responsive">
+                        <table class="table table-custom align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Code</th>
+                                    <th scope="col">Course Name</th>
+                                    <th scope="col">Lecturer</th>
+                                    <th scope="col">Credits</th>
+                                    <th scope="col">Enrolled</th>
+                                    <th scope="col">Seats Filled</th>
+                                </tr>
+                            </thead>
+                            <!-- Rows are added here by script.js -->
+                            <tbody id="courseTableBody"></tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        &copy; <span id="year">2026</span> StudentHub &middot; CDIM262 Project
+    </footer>
+
+    <!-- JavaScript: Bootstrap bundle, then our own script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
